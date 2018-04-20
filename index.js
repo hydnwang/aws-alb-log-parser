@@ -23,25 +23,29 @@ module.exports = function (line) {
   }
 
   [
-    { 'type'                        : ' '   },
-    { 'timestamp'                   : ' '   },
-    { 'elb'                         : ' '   },
-    { 'client'                      : ':'   },
-    { 'client_port'                 : ' '   },
-    { 'target'                      : ' '   },
-    { 'request_processing_time'     : ' '   },
-    { 'target_processing_time'      : ' '   },
-    { 'response_processing_time'    : ' '   },
-    { 'elb_status_code'             : ' '   },
-    { 'target_status_code'          : ' '   },
-    { 'received_bytes'              : ' '   },
-    { 'sent_bytes'                  : ' "'  },
-    { 'request'                     : '" "' },
-    { 'user_agent'                  : '" '  },
-    { 'ssl_cipher'                  : ' '   },
-    { 'ssl_protocol'                : ' '   },
-    { 'target_group_arn'            : ' "'   },
-    { 'trace_id'                    : '"'   }
+    { 'type': ' ' },
+    { 'timestamp': ' ' },
+    { 'elb': ' ' },
+    { 'client': ':' },
+    { 'client_port': ' ' },
+    { 'target': ':' },
+    { 'target_port': ' ' },
+    { 'request_processing_time': ' ' },
+    { 'target_processing_time': ' ' },
+    { 'response_processing_time': ' ' },
+    { 'elb_status_code': ' ' },
+    { 'target_status_code': ' ' },
+    { 'received_bytes': ' ' },
+    { 'sent_bytes': ' "' },
+    { 'request': '" "' },
+    { 'user_agent': '" ' },
+    { 'ssl_cipher': ' ' },
+    { 'ssl_protocol': ' ' },
+    { 'target_group_arn': ' "' },
+    { 'trace_id': '" "' },
+    { 'domain_name': '" "' },
+    { 'chosen_cert_arn': ' ' },
+    { 'matched_rule_priority': ' ' }
   ].some(function (t) {
     var label = Object.keys(t)[0];
     delimiter = t[label]
