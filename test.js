@@ -4,7 +4,7 @@ var parse = require('./index.js')
 
 tap.test('http traffic', function (t) {
   var parsed = parse(
-    'http 2015-05-13T23:39:43.945958Z my-loadbalancer 192.168.131.39:2817 10.0.0.1:80 0.000073 0.001048 0.000057 200 200 0 29 "GET http://www.example.com:80/ HTTP/1.1" "curl/7.38.0" - - arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067 "Root=1-58337262-36d228ad5d99923122bbe354"'
+    'http 2015-05-13T23:39:43.945958Z my-loadbalancer 192.168.131.39:2817 10.0.0.1:80 0.000073 0.001048 0.000057 200 200 0 29 "GET http://www.example.com:80/ HTTP/1.1" "curl/7.38.0" - - arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067 "Root=1-58337262-36d228ad5d99923122bbe354" "-" "arn:aws:acm:us-east-1:866155191193:certificate/55d78915-b2ce-4fbe-896e-c6f43e417e35" 82'
   );
   t.equal(parsed.type, 'http', 'we have type');
   t.equal(parsed.timestamp, '2015-05-13T23:39:43.945958Z', 'we have timestamp');
@@ -34,6 +34,9 @@ tap.test('http traffic', function (t) {
   t.equal(parsed.ssl_protocol, '-', 'we have ssl_protocol');
   t.equal(parsed.target_group_arn, 'arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067', 'we have target_group_arn');
   t.equal(parsed.trace_id, 'Root=1-58337262-36d228ad5d99923122bbe354', 'we have trace_id');
+  t.equal(parsed.domain_name, '-', 'we have domain_name');
+  t.equal(parsed.chosen_cert_arn, 'arn:aws:acm:us-east-1:866155191193:certificate/55d78915-b2ce-4fbe-896e-c6f43e417e35', 'we have chosen_cert_arn');
+  t.equal(parsed.matched_rule_priority, 82, 'we have matched_rule_priority');
   t.end();
 });
 

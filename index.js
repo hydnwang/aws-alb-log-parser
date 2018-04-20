@@ -15,9 +15,7 @@ module.exports = function (line) {
     'request_uri_query'
   ];
 
-  //
   // Trailing newline? NOTHX
-  //
   if (line.match(/\n$/)) {
     line = line.slice(0, line.length - 1);
   }
@@ -28,8 +26,7 @@ module.exports = function (line) {
     { 'elb': ' ' },
     { 'client': ':' },
     { 'client_port': ' ' },
-    { 'target': ':' },
-    { 'target_port': ' ' },
+    { 'target': ' ' },
     { 'request_processing_time': ' ' },
     { 'target_processing_time': ' ' },
     { 'response_processing_time': ' ' },
@@ -44,7 +41,7 @@ module.exports = function (line) {
     { 'target_group_arn': ' "' },
     { 'trace_id': '" "' },
     { 'domain_name': '" "' },
-    { 'chosen_cert_arn': ' ' },
+    { 'chosen_cert_arn': '" ' },
     { 'matched_rule_priority': ' ' }
   ].some(function (t) {
     var label = Object.keys(t)[0];
