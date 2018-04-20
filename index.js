@@ -51,18 +51,16 @@ module.exports = function (line) {
     delimiter = t[label]
     var m = line.match(delimiter);
     if (m === null) {
-      //
-      // No match. Try to pick off the last element.
-      //
-      m = line.match(delimiter.slice(0, 1));
 
+      // No match. Try to pick off the last element.
+      m = line.match(delimiter.slice(0, 1));
       if (m === null) {
         field = line;
       }
       else {
         field = line.substr(0, m.index);
       }
-      parsed[label] = field;
+      parsed[label] = field == 0 ? 0 : Number(field) || field;
 
       return true;
     }
