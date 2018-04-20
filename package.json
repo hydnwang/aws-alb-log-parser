@@ -1,0 +1,31 @@
+{
+  "name": "alb-log-parser",
+  "version": "0.0.3",
+  "description": "A basic parser for ALB access logs, forked from elb log parser git@github.com:toshihirock/node-elb-log-parser.git",
+  "main": "index.js",
+  "bin": {
+    "alb-log-parser": "index.js"
+  },
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:igtm/node-alb-log-parser.git"
+  },
+  "keywords": [
+    "alb",
+    "elb",
+    "access",
+    "log",
+    "parser"
+  ],
+  "author": "igtm",
+  "license": "MIT",
+  "devDependencies": {
+    "tap": "~0.4.3"
+  },
+  "dependencies": {
+    "split": "^1.0.0"
+  }
+}
