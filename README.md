@@ -1,6 +1,6 @@
 # AWS ALB Log Parser
 
-An ALB log parser modified from alb-log-parser: [https://github.com/igtm/node-alb-log-parser](https://github.com/igtm/node-alb-log-parser). The output of the original version lose some fields, so I just add them back, feel free to use this package.
+ALB log parser modified from alb-log-parser: [https://github.com/igtm/node-alb-log-parser](https://github.com/igtm/node-alb-log-parser). The output of the original version lost some fields, so I just added them back, feel free to use this package.
 
 ## Install
 
