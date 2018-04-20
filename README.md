@@ -4,7 +4,7 @@ ALB log parser modified from alb-log-parser: [https://github.com/igtm/node-alb-l
 
 ## Install
 
-Unfortunately, I haven't publish this package to NPM. However, you can still copy this entire package to node_modules folder and require the folder name in your code.
+Unfortunately, I haven't published this package to NPM. However, you can still copy this entire package to node_modules folder and require the folder name in your code.
 
 ## Tests
 
